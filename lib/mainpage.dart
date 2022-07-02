@@ -18,6 +18,8 @@ class _MainPageState extends State<MainPage> {
         centerTitle: true,
         leading: Icon(Icons.menu)
       ),
+
+      //右側？？？
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
@@ -65,6 +67,7 @@ class _MainPageState extends State<MainPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
 
         children: <Widget>[
+          //1つ目の行
           Expanded(
             child: Row(
               children: <Widget>[
@@ -72,8 +75,13 @@ class _MainPageState extends State<MainPage> {
                   child: Padding(
                     padding: const EdgeInsets.all(3.0),
                     child: Container(
+
+                      //背景の色に合わせる
+                      child: Image.asset(
+                        'images/penguins.jpeg',
+                      ),
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: Colors.lightBlue,
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
@@ -112,6 +120,7 @@ class _MainPageState extends State<MainPage> {
               ],
             ),
           ),
+          //2つ目の行
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -126,6 +135,7 @@ class _MainPageState extends State<MainPage> {
             ),
 
           ),
+          //3つ目の行
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -142,6 +152,7 @@ class _MainPageState extends State<MainPage> {
           ),
 
 
+          //4つめの行
           Expanded(
             child: Row(
               children: <Widget>[
