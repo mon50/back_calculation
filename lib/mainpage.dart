@@ -122,13 +122,13 @@ class _MainPageState extends State<MainPage> {
                               SizedBox(height: 1.0,),
                               Container(
                                 child: Image.asset(
-                                  'images/level.png',
+                                  'images/level_opa.png',
                                   // fit: BoxFit.contain,
                                 ),
                                 width: 140,
                                 height: 80,
                                 decoration: BoxDecoration(
-                                  color: kMainColour,
+                                  color: kBackColour,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
