@@ -80,7 +80,7 @@ class _MainPageState extends State<MainPage> {
 
                       //背景の色に合わせる
                       child: Image.asset(
-                        'images/penguins.jpeg',
+                        'images/count.png',
                       ),
                       decoration: BoxDecoration(
                         color: Colors.lightBlue,
@@ -144,7 +144,7 @@ class _MainPageState extends State<MainPage> {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 child: Image.asset(
-                  'images/weekly_todo.jpeg',
+                  'images/todo.png',
                   // fit: BoxFit.contain,
                 ),
                 width: 100,
