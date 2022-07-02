@@ -1,5 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-
+import 'package:intl/intl.dart';
 
 const kMainColour = Color(0xFF4DBEDC);
 const kIconColour = Colors.black;
@@ -12,6 +13,52 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+
+  int _seconds = 00;
+  int _minutes = 00;
+  int _hour = 8;
+  late Timer _timer;
+  var f = NumberFormat("00");
+
+
+  void _startTimer(){
+
+    if (_hour > 0){
+      _minutes = _hour * 60;
+    }
+    if (_minutes > 0){
+      _hour = (_minutes/60).floor();
+      _minutes -= (_hour * 60);
+    }
+    if (_seconds >60){
+      _minutes = (_seconds/60).floor();
+      _seconds -= (_minutes * 60);
+    }
+
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      setState(() {
+        if (_seconds > 0){
+          _seconds--;
+        }
+        else {
+          if (_minutes >0){
+            _seconds = 59;
+            _minutes--;
+          }
+          else {
+            if (_hour >0){
+              _minutes = 59;
+              _hour--;
+            }
+            else {
+              _timer.cancel();
+              print("Timer Complete");
+            }
+          }
+        }});
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -162,7 +209,15 @@ class _MainPageState extends State<MainPage> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
             child: Container(
-              child: Center(child: Text('時間')),
+              child: Center(
+                  child: Text(
+                    "${f.format(_hour)} : ${f.format(_minutes)} : ${f.format(_seconds)}",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 48,
+                    ),
+                  ),
+              ),
               width: double.infinity,
               height: 75,
               decoration: BoxDecoration(
@@ -188,7 +243,14 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
               Container(
-                child: Center(child: Text('stop/start')),
+                child: Center(
+                    child: TextButton(
+                      onPressed: (){
+                        _startTimer();
+                      },
+                      child: Text('stop/start'),
+                    ),
+                ),
                 width: 150,
                 height: kFourheight,
                 decoration: BoxDecoration(
