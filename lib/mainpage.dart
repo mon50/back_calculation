@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+const kMainColour = Colors.blue;
+const kIconColour = Colors.black;
+
 class MainPage extends StatefulWidget {
   @override
   State<MainPage> createState() => _MainPageState();
@@ -12,8 +15,33 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: Text('SeaThrough'),
         centerTitle: true,
-        leading: Icon(Icons.menu),
+        leading: Icon(Icons.menu)
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              child: Text(
+                'My App',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                ),
+              ),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: Text('information'),
+              onTap: () {
+                // setState(() => _city = 'Los Angeles, CA');
+                Navigator.pop(context);
+              },
+            ),
 
+          ],
+        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
