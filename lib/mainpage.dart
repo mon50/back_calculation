@@ -140,6 +140,8 @@ class _MainPageState extends State<MainPage> {
             ),
 
           ),
+
+
           Expanded(
             child: Row(
               children: <Widget>[
@@ -147,10 +149,15 @@ class _MainPageState extends State<MainPage> {
                   child: Padding(
                     padding: const EdgeInsets.all(3.0),
                     child: Container(
+                      child: Icon(
+                        Icons.settings_outlined,
+                        color: kIconColour,
+                        size: 24,
+                      ),
                       width: 100,
                       height: 100,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: kMainColour,
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
@@ -164,7 +171,7 @@ class _MainPageState extends State<MainPage> {
                       width: 100,
                       height: 100,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: kMainColour,
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
@@ -175,10 +182,15 @@ class _MainPageState extends State<MainPage> {
                   child: Padding(
                     padding: const EdgeInsets.all(3.0),
                     child: Container(
+                      child: Icon(
+                        Icons.access_time,
+                        color: kIconColour,
+                        size: 24,
+                      ),
                       width: 100,
                       height: 100,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: kMainColour,
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
@@ -188,7 +200,6 @@ class _MainPageState extends State<MainPage> {
               ],
             ),
           ),
-
         ],
       ),
 
