@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+
 const kMainColour = Color(0xFF4DBEDC);
 const kIconColour = Colors.black;
+const kBackColour = Color(0xFFFCFFE7);
+const kFourheight = 60.0;
 
 class MainPage extends StatefulWidget {
   @override
@@ -65,176 +68,151 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-
-        children: <Widget>[
-          //1つ目の行
-          Expanded(
-            child: Row(
-
-              children: <Widget>[
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: Container(
-
-                      //背景の色に合わせる
-                      child: Image.asset(
-                        'images/count.png',
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.lightBlue,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                ),
-
-
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      //大学名
-                      Padding(
-                        padding: const EdgeInsets.all(3.0),
-                        child: Container(
-                          child: Center(
-                            child: Text('早稲田大学',
-                            style: TextStyle(
-                              color: Colors.white,
-
-                            ),),
-                          ),
-                          // width: 150,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: kMainColour,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
-                      //ランキング
-                      Padding(
-                        padding: const EdgeInsets.all(3.0),
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                         child: Container(
                           child: Image.asset(
-                            'images/level.png',
-                            // fit: BoxFit.contain,
+                            'images/penguins_opa.png',
                           ),
-                          // width: 150,
-                          height: 75,
+                          width: 140,
+                          height: 120,
                           decoration: BoxDecoration(
-                            color: Colors.blue,
+                            color: kBackColour,
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    Expanded(
+                      child: Align(
+                        alignment: AlignmentDirectional(0, 0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Container(
+                                child: Center(
+                                  child: Text('早稲田大学',
+                                    style: TextStyle(
+                                      color: Colors.white,
 
+                                    ),),
+                                ),
+                                width: 140,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: kMainColour,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                              SizedBox(height: 1.0,),
+                              Container(
+                                child: Image.asset(
+                                  'images/level.png',
+                                  // fit: BoxFit.contain,
+                                ),
+                                width: 140,
+                                height: 80,
+                                decoration: BoxDecoration(
+                                  color: kMainColour,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              )
+
           ),
-          //2つ目の行
-          Expanded(
-
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                child: Image.asset(
-                  'images/todo.png',
-                  // fit: BoxFit.contain,
-                ),
-                width: 100,
-                height: 200,
-                decoration: BoxDecoration(
-                  color: kMainColour,
-                  borderRadius: BorderRadius.circular(10),
-                ),
+          //2行め
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+            child: Container(
+              child: Image.asset(
+                'images/weekly_todo.png',
+                // fit: BoxFit.contain,
+              ),
+              width: double.infinity,
+              height: 200,
+              decoration: BoxDecoration(
+                color: kBackColour,
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
-
           ),
-          //3つ目の行
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: 100,
-                // height: 20,
-                decoration: BoxDecoration(
-                  color: kMainColour,
-                  borderRadius: BorderRadius.circular(10),
-                ),
+          //三行目
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+            child: Container(
+              child: Center(child: Text('時間')),
+              width: double.infinity,
+              height: 75,
+              decoration: BoxDecoration(
+                color: kMainColour,
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
-
           ),
-
-
-          //4つめの行
-          Expanded(
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: Container(
-                      child: Icon(
-                        Icons.settings_outlined,
-                        color: kIconColour,
-                        size: 24,
-                      ),
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        color: kMainColour,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                width: 100,
+                height: kFourheight,
+                decoration: BoxDecoration(
+                  color: kBackColour,
                 ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: Container(
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        color: kMainColour,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-
+                child: Icon(
+                  Icons.settings_outlined,
+                  color: Colors.black,
+                  size: 24,
                 ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: Container(
-                      child: Icon(
-                        Icons.access_time,
-                        color: kIconColour,
-                        size: 24,
-                      ),
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        color: kMainColour,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-
+              ),
+              Container(
+                child: Center(child: Text('stop/start')),
+                width: 150,
+                height: kFourheight,
+                decoration: BoxDecoration(
+                  color: Color(0xFFEEEEEE),
+                  borderRadius: BorderRadius.circular(10),
                 ),
-              ],
-            ),
+
+              ),
+              Container(
+                width: 100,
+                height: kFourheight,
+                decoration: BoxDecoration(
+                  color: kBackColour,
+                ),
+                child: Icon(
+                  Icons.event_note,
+                  color: Colors.black,
+                  size: 24,
+                ),
+              ),
+            ],
           ),
         ],
-      ),
+      )
 
 
 
