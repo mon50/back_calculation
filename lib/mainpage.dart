@@ -70,6 +70,7 @@ class _MainPageState extends State<MainPage> {
           //1つ目の行
           Expanded(
             child: Row(
+
               children: <Widget>[
                 Expanded(
                   child: Padding(
@@ -87,14 +88,24 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ),
                 ),
+
+
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
+                      //大学名
                       Padding(
                         padding: const EdgeInsets.all(3.0),
                         child: Container(
-                          width: 50,
+                          child: Center(
+                            child: Text('早稲田大学',
+                            style: TextStyle(
+                              color: Colors.white,
+
+                            ),),
+                          ),
+                          // width: 150,
                           height: 50,
                           decoration: BoxDecoration(
                             color: Colors.blue,
@@ -102,11 +113,16 @@ class _MainPageState extends State<MainPage> {
                           ),
                         ),
                       ),
+                      //ランキング
                       Padding(
                         padding: const EdgeInsets.all(3.0),
                         child: Container(
-                          width: 50,
-                          height: 50,
+                          child: Image.asset(
+                            'images/level.png',
+                            // fit: BoxFit.contain,
+                          ),
+                          // width: 150,
+                          height: 75,
                           decoration: BoxDecoration(
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(10),
@@ -122,11 +138,16 @@ class _MainPageState extends State<MainPage> {
           ),
           //2つ目の行
           Expanded(
+
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
+                child: Image.asset(
+                  'images/weekly_todo.jpeg',
+                  // fit: BoxFit.contain,
+                ),
                 width: 100,
-                height: 100,
+                height: 200,
                 decoration: BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(10),
@@ -141,7 +162,7 @@ class _MainPageState extends State<MainPage> {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 width: 100,
-                height: 50,
+                // height: 20,
                 decoration: BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(10),
