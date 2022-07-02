@@ -45,6 +45,30 @@ class _InformationPageState extends State<InformationPage> {
       ),
       body: Column(
         children:<Widget>[
+          Center(
+            child:Container(
+              height:100,
+              width:200,
+              child: Column(
+                children: <Widget>[
+                  Text('ニックネーム'),
+                  Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    child: Container(
+                      child: TextFormField(),
+                      width: 100,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: kMainColour,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              color: Colors.white,
+            ) ,
+          ),
           SelectFormField(
             type: SelectFormFieldType.dropdown, // or can be dialog
             initialValue: 'circle',
@@ -53,14 +77,16 @@ class _InformationPageState extends State<InformationPage> {
             onChanged: (val) => print(val),
             onSaved: (val) => print(val),
           ),
-          Container(
-            width: double.infinity,
-            child:TextFormField(),
-          ) ,
-          Container(
-            width: double.infinity,
-            child:TextFormField(),
-          ) ,
+          Center(
+            child:Container(
+              height:100,
+              width:200,
+              child:TextFormField(),
+              color: Colors.lightBlueAccent,
+            ) ,
+          ),
+
+
 
           Align(
             alignment: Alignment.bottomCenter,
