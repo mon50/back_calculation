@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const kMainColour = Colors.blue;
+const kMainColour = Color(0xFF4DBEDC);
 const kIconColour = Colors.black;
 
 class MainPage extends StatefulWidget {
@@ -16,6 +16,7 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: Text('SeaThrough'),
         centerTitle: true,
+        backgroundColor: kMainColour,
         leading: Icon(Icons.menu)
       ),
 
@@ -34,7 +35,7 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: kMainColour,
                 ),
               ),
             ),
@@ -108,7 +109,7 @@ class _MainPageState extends State<MainPage> {
                           // width: 150,
                           height: 50,
                           decoration: BoxDecoration(
-                            color: Colors.blue,
+                            color: kMainColour,
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
@@ -149,7 +150,7 @@ class _MainPageState extends State<MainPage> {
                 width: 100,
                 height: 200,
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: kMainColour,
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
@@ -164,7 +165,7 @@ class _MainPageState extends State<MainPage> {
                 width: 100,
                 // height: 20,
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: kMainColour,
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),

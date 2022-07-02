@@ -9,7 +9,7 @@ class BackSan extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.light().copyWith(
         primaryColor: Colors.purple,
-        scaffoldBackgroundColor: Colors.amber,
+        scaffoldBackgroundColor: Color(0xFFFCFFE7),
 
       ),
       home:InformationPage(),
