@@ -99,7 +99,7 @@ class _MainPageState extends State<MainPage> {
                       child: Align(
                         alignment: AlignmentDirectional(0, 0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -160,7 +160,7 @@ class _MainPageState extends State<MainPage> {
           ),
           //三行目
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
             child: Container(
               child: Center(child: Text('時間')),
               width: double.infinity,
