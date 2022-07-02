@@ -9,6 +9,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,20 +21,37 @@ class _MainPageState extends State<MainPage> {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            DrawerHeader(
-              child: Text(
-                'My App',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
+            SizedBox(
+              height: 70.0,
+              child: DrawerHeader(
+                child: Text(
+                  'Sea Through',
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              decoration: BoxDecoration(
-                color: Colors.blue,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
               ),
             ),
             ListTile(
-              title: Text('information'),
+              title: Text('Sea Through1'),
+              onTap: () {
+                // setState(() => _city = 'Los Angeles, CA');
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Sea Through2'),
+              onTap: () {
+                // setState(() => _city = 'Los Angeles, CA');
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Sea Through3'),
               onTap: () {
                 // setState(() => _city = 'Los Angeles, CA');
                 Navigator.pop(context);
