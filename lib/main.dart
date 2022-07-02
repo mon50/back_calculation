@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:back_calculation/information.dart';
+void main() => runApp(BackSan());
 
-void main() => runApp(PerfectSeeThrough());
-
-class PerfectSeeThrough extends StatelessWidget {
+class BackSan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +12,7 @@ class PerfectSeeThrough extends StatelessWidget {
         scaffoldBackgroundColor: Colors.amber,
 
       ),
+      home:InformationPage(),
     );
   }
 }
