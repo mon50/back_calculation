@@ -13,7 +13,16 @@ class _InformationPageState extends State<InformationPage> {
       appBar: AppBar(
         title: Text('seeeeeee'),
       ),
-      body: Placeholder(),
+      body: Align(
+        alignment: Alignment.bottomCenter,
+        child: ElevatedButton(
+          child: Text("決定"),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MainPage()));
+          },
+        ),
+      ),
     );
   }
 }
