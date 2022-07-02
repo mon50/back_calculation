@@ -1,3 +1,4 @@
+import 'package:back_calculation/mainpage.dart';
 import 'package:flutter/material.dart';
 
 class InformationPage extends StatefulWidget {
@@ -13,7 +14,17 @@ class _InformationPageState extends State<InformationPage> {
       appBar: AppBar(
         title: Text('seeeeeee'),
       ),
-      body: Placeholder(),
+      body: Align(
+        alignment: Alignment.bottomCenter,
+        child:ElevatedButton(
+          child: Text("MainPage"),
+          onPressed: (){
+            Navigator.push(
+              context, MaterialPageRoute(builder: (context) => MainPage())
+            );
+          },
+        )
+      ),
     );
   }
 }
