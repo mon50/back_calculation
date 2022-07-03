@@ -232,7 +232,7 @@ class _InformationPageState extends State<InformationPage> {
                 type: SelectFormFieldType.dropdown, // or can be dialog
                 initialValue: 'circle',
                 labelText: '志望学部',
-                items: _items,
+                items: _items_2,
                 onChanged: (val) => print(val),
                 onSaved: (val) => print(val),
               ),
@@ -243,7 +243,7 @@ class _InformationPageState extends State<InformationPage> {
                 type: SelectFormFieldType.dropdown, // or can be dialog
                 initialValue: 'circle',
                 labelText: '志望学科',
-                items: _items,
+                items: _items_3,
                 onChanged: (val) => print(val),
                 onSaved: (val) => print(val),
               ),

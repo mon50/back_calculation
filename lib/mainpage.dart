@@ -112,8 +112,9 @@ class _MainPageState extends State<MainPage> {
                           child: Container(
                             child: Image.asset(
                               'images/penguins_opa.png',
+                              fit: BoxFit.contain,
                             ),
-                            width: 140,
+                            width: 160,
                             height: 120,
                             decoration: BoxDecoration(
                               color: kBackColour,
@@ -193,7 +194,7 @@ class _MainPageState extends State<MainPage> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 2, 0, 2),
                     child: Container(
                       width: 270,
-                      height: 250,
+                      height: 220,
                       decoration: BoxDecoration(
                         color: kBackColour,
                         borderRadius: BorderRadius.circular(12),
@@ -221,7 +222,7 @@ class _MainPageState extends State<MainPage> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 2, 0, 2),
                     child: Container(
                       width: 270,
-                      height: 250,
+                      height: 220,
                       decoration: BoxDecoration(
                         color: kBackColour,
                         borderRadius: BorderRadius.circular(12),
