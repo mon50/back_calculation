@@ -152,11 +152,15 @@ class _InformationPageState extends State<InformationPage> {
                         alignment: Alignment.centerLeft,
                         child: Text('ニックネーム'),
                       ),
-                      TextFormField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
+                      Container(
+                        color: Colors.white,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                          ),
                         ),
                       ),
+
                     ],
                   ),
                 ) ,
@@ -172,9 +176,12 @@ class _InformationPageState extends State<InformationPage> {
                       alignment: Alignment.centerLeft,
                       child: Text('アクセスキー'),
                     ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+                    Container(
+                      color: Colors.white,
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                        ),
                       ),
                     ),
                   ],
@@ -192,9 +199,12 @@ class _InformationPageState extends State<InformationPage> {
                         alignment: Alignment.centerLeft,
                         child: Text('志望大学の頭文字'),
                       ),
-                      TextFormField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
+                      Container(
+                        color: Colors.white,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                          ),
                         ),
                       ),
                     ],
@@ -202,37 +212,47 @@ class _InformationPageState extends State<InformationPage> {
                 ) ,
               ),
             ),
-            SelectFormField(
-              type: SelectFormFieldType.dropdown, // or can be dialog
-              initialValue: 'circle',
-              labelText: '志望大学',
-              items: _items,
-              onChanged: (val) => print(val),
-              onSaved: (val) => print(val),
+            Container(
+              height: 10,
             ),
-            SelectFormField(
-              type: SelectFormFieldType.dropdown, // or can be dialog
-              initialValue: 'circle',
-              labelText: '志望学部',
-              items: _items_2,
-              onChanged: (val) => print(val),
-              onSaved: (val) => print(val),
+            Container(
+              color: Colors.white,
+              child: SelectFormField(
+                type: SelectFormFieldType.dropdown, // or can be dialog
+                initialValue: 'circle',
+                labelText: '志望大学',
+                items: _items,
+                onChanged: (val) => print(val),
+                onSaved: (val) => print(val),
+              ),
             ),
-
-            SelectFormField(
-              type: SelectFormFieldType.dropdown, // or can be dialog
-              initialValue: 'circle',
-              labelText: '志望学科',
-              items: _items_3,
-              onChanged: (val) => print(val),
-              onSaved: (val) => print(val),
+            Container(
+              color: Colors.white,
+              child: SelectFormField(
+                type: SelectFormFieldType.dropdown, // or can be dialog
+                initialValue: 'circle',
+                labelText: '志望学部',
+                items: _items,
+                onChanged: (val) => print(val),
+                onSaved: (val) => print(val),
+              ),
             ),
-
+            Container(
+              color: Colors.white,
+              child: SelectFormField(
+                type: SelectFormFieldType.dropdown, // or can be dialog
+                initialValue: 'circle',
+                labelText: '志望学科',
+                items: _items,
+                onChanged: (val) => print(val),
+                onSaved: (val) => print(val),
+              ),
+            ),
             //コースボタン
             Column(
               children:<Widget>[
                 Container(
-                  height: 30,
+                  height: 20,
                 ),
                 Container(
                   height: 30,
@@ -240,6 +260,7 @@ class _InformationPageState extends State<InformationPage> {
                 ),
                 Container(
                   height: 60,
+                  width: 400,
                   child:Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children:<Widget>[
