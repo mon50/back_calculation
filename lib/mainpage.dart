@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:back_calculation/annual_calender.dart';
+
 
 // const kMainColour = Color(0xFF4DBEDC);
 const kMainColour = Color(0xFF82CCC1);
@@ -12,6 +14,30 @@ const kFourheight = 60.0;
 class MainPage extends StatefulWidget {
   @override
   State<MainPage> createState() => _MainPageState();
+}
+
+
+class CommonDrawer {
+  Drawer drawerDefault() {
+    return Drawer(
+      child: ListView(
+        children: [
+          DrawerHeader(
+            child: Text("ヘッダー"),
+          ),
+          ListTile(
+              title: Text("ページ１")
+          ),
+          ListTile(
+              title: Text("ページ２")
+          ),
+          ListTile(
+              title: Text("ページ３")
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class _MainPageState extends State<MainPage> {
@@ -61,54 +87,13 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text('SeaThrough'),
+            title: Text('逆ペン合格'),
             centerTitle: true,
             backgroundColor: kMainColour,
             leading: Icon(Icons.menu)),
 
         //右側？？？
-        drawer: Drawer(
-          child: ListView(
-            children: <Widget>[
-              SizedBox(
-                height: 70.0,
-                child: DrawerHeader(
-                  child: Text(
-                    'Sea Through',
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.white,
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    color: kMainColour,
-                  ),
-                ),
-              ),
-              ListTile(
-                title: Text('Sea Through1'),
-                onTap: () {
-                  // setState(() => _city = 'Los Angeles, CA');
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Sea Through2'),
-                onTap: () {
-                  // setState(() => _city = 'Los Angeles, CA');
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Sea Through3'),
-                onTap: () {
-                  // setState(() => _city = 'Los Angeles, CA');
-                  Navigator.pop(context);
-                },
-              ),
-            ],
-          ),
-        ),
+        drawer: CommonDrawer().drawerDefault(),
         body: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -196,51 +181,36 @@ class _MainPageState extends State<MainPage> {
                     ],
                   ),
                 )),
-            //2行め
-            // Padding(
-            //   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-            //   child: Container(
-            //     child: Image.asset(
-            //       'images/weekly_todo.png',
-            //       // fit: BoxFit.contain,
-            //     ),
-            //     width: double.infinity,
-            //     height: 200,
-            //     decoration: BoxDecoration(
-            //       color: kBackColour,
-            //       borderRadius: BorderRadius.circular(10),
-            //     ),
-            //   ),
-            // ),
             SizedBox(
-              height: 200,
+              height: 250,
               child: ListView(
-                padding: EdgeInsets.zero,
+                padding: EdgeInsets.only(left: 10),
                 primary: false,
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(7, 7, 7, 7),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 2, 0, 2),
                     child: Container(
                       width: 270,
-                      height: 100,
+                      height: 250,
                       decoration: BoxDecoration(
-                        color: Color(0xFFEEEEEE),
+                        color: kBackColour,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
                         child: Container(
                           width: double.infinity,
-                          height: 170,
+                          height: 250,
                           decoration: BoxDecoration(
-                            color: Color(0xFFEEEEEE),
+                            color: kBackColour,
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(12),
                             child: Image.asset(
                               'images/weekly_todo3.png',
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
@@ -248,27 +218,27 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(7, 7, 7, 7),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 2, 0, 2),
                     child: Container(
                       width: 270,
-                      height: 100,
+                      height: 250,
                       decoration: BoxDecoration(
-                        color: Color(0xFFEEEEEE),
+                        color: kBackColour,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
                         child: Container(
                           width: double.infinity,
-                          height: 170,
+                          height: 250,
                           decoration: BoxDecoration(
-                            color: Color(0xFFEEEEEE),
+                            color: kBackColour,
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(12),
                             child: Image.asset(
                               'images/weekly_todo4.png',
-
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
@@ -281,7 +251,7 @@ class _MainPageState extends State<MainPage> {
 
             //3行目
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
               child: Container(
                 child: Center(
                   child: Text(
@@ -338,8 +308,11 @@ class _MainPageState extends State<MainPage> {
                         _startTimer();
                       },
                       child: Text(
-                        'stop/start',
-                        style: TextStyle(color: Colors.redAccent),
+                        'start/stop',
+                        style: TextStyle(
+                          color: Colors.redAccent,
+                          fontSize: 18.0,
+                        ),
                       ),
                     ),
                   ),
@@ -363,7 +336,11 @@ class _MainPageState extends State<MainPage> {
                       color: Colors.black,
                       size: 24,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AnnualCalender()));
+                    },
                     elevation: 2.0,
                     constraints: BoxConstraints.tightFor(
                       width: 56.0,
