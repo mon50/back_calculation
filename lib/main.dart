@@ -11,6 +11,7 @@ class BackSan extends StatelessWidget {
         primaryColor: Colors.purple,
         scaffoldBackgroundColor: Color(0xFFFCFFE7),
 
+        // scaffoldBackgroundColor: Colors.white,
       ),
       home:InformationPage(),
     );
