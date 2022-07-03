@@ -8,7 +8,7 @@ class InformationPage extends StatefulWidget {
   State<InformationPage> createState() => _InformationPageState();
 }
 
-const kMainColour = Color(0xFF4DBEDC);
+const kMainColour = Color(0xFF82CCC1);
 
 bool button_1 = false;
 bool button_2 = false;
@@ -134,7 +134,7 @@ class _InformationPageState extends State<InformationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('SeaThrough'),
+          title: Text('基本情報登録'),
           centerTitle: true,
           backgroundColor: kMainColour,
       ),
@@ -144,11 +144,14 @@ class _InformationPageState extends State<InformationPage> {
             Center(
               child:Center(
                 child:Container(
-                  height:100,
+                  height:80,
                   width:200,
                   child: Column(
                     children: <Widget>[
-                      Text('ニックネーム'),
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text('ニックネーム'),
+                      ),
                       TextFormField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
@@ -161,11 +164,14 @@ class _InformationPageState extends State<InformationPage> {
             ),
             Center(
               child:Container(
-                height:100,
+                height:80,
                 width:200,
                 child: Column(
                   children: <Widget>[
-                    Text('アクセスキー'),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: Text('アクセスキー'),
+                    ),
                     TextFormField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
@@ -178,11 +184,14 @@ class _InformationPageState extends State<InformationPage> {
             Center(
               child:Center(
                 child:Container(
-                  height:100,
+                  height:80,
                   width:200,
                   child: Column(
                     children: <Widget>[
-                      Text('学校の頭文字'),
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text('志望大学の頭文字'),
+                      ),
                       TextFormField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
@@ -196,7 +205,7 @@ class _InformationPageState extends State<InformationPage> {
             SelectFormField(
               type: SelectFormFieldType.dropdown, // or can be dialog
               initialValue: 'circle',
-              labelText: '大学',
+              labelText: '志望大学',
               items: _items,
               onChanged: (val) => print(val),
               onSaved: (val) => print(val),
@@ -204,7 +213,7 @@ class _InformationPageState extends State<InformationPage> {
             SelectFormField(
               type: SelectFormFieldType.dropdown, // or can be dialog
               initialValue: 'circle',
-              labelText: '学部',
+              labelText: '志望学部',
               items: _items_2,
               onChanged: (val) => print(val),
               onSaved: (val) => print(val),
@@ -213,122 +222,147 @@ class _InformationPageState extends State<InformationPage> {
             SelectFormField(
               type: SelectFormFieldType.dropdown, // or can be dialog
               initialValue: 'circle',
-              labelText: '学科',
+              labelText: '志望学科',
               items: _items_3,
               onChanged: (val) => print(val),
               onSaved: (val) => print(val),
             ),
 
             //コースボタン
-            Text('コース選択'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Column(
               children:<Widget>[
                 Container(
-                  height: 50,
-                  width: 50,
-                  child: RawMaterialButton(
-                    child:Image.asset(
-                      'images/course1.png',
-                    ),
-                    onPressed: () => {
-                      setState(() {
-                        button_1 = true;
-                        button_2 = false;
-                        button_3 = false;
-                        button_4 = false;
-                      }),
-                    },
-                    elevation: 2.0,
-                    constraints: BoxConstraints.tightFor(
-                      width: 56.0,
-                      height: 56.0,
-                    ),
-                    shape: CircleBorder(),
-                    fillColor: button_1 ? Colors.blue : Colors.black,
-                  ),
+                  height: 30,
                 ),
                 Container(
-                  height: 50,
-                  width: 50,
-                  child: RawMaterialButton(
-                    child:Image.asset(
-                      'images/course2.png',
-                    ),
-                    onPressed: () => {
-                      setState(() {
-                        button_1 = false;
-                        button_2 = true;
-                        button_3 = false;
-                        button_4 = false;
-                      }),
-                    },
-                    elevation: 2.0,
-                    constraints: BoxConstraints.tightFor(
-                    width: 56.0,
-                    height: 56.0,
-                    ),
-                    shape: CircleBorder(),
-                    fillColor: button_2 ? Colors.blue : Colors.black,
-                    ),
+                  height: 30,
+                  child:Text('コース選択'),
                 ),
                 Container(
-                  height: 50,
-                  width: 50,
-                  child: RawMaterialButton(
-                    child:Image.asset(
-                      'images/course3.png',
-                    ),
-                    onPressed: () => {
-                      setState(() {
-                        button_1 = false;
-                        button_2 = false;
-                        button_3 = true;
-                        button_4 = false;
-                      }),
-                    },
-                    elevation: 2.0,
-                    constraints: BoxConstraints.tightFor(
-                      width: 56.0,
-                      height: 56.0,
-                    ),
-                    shape: CircleBorder(),
-                    fillColor: button_3 ? Colors.blue : Colors.black,
+                  height: 60,
+                  child:Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children:<Widget>[
+                      Container(
+                        height: 50,
+                        width: 50,
+                        child: RawMaterialButton(
+                          child:Image.asset(
+                            'images/course1.png',
+                          ),
+                          onPressed: () => {
+                            setState(() {
+                              button_1 = true;
+                              button_2 = false;
+                              button_3 = false;
+                              button_4 = false;
+                            }),
+                          },
+                          elevation: 2.0,
+                          constraints: BoxConstraints.tightFor(
+                            width: 56.0,
+                            height: 56.0,
+                          ),
+                          shape: CircleBorder(),
+                          fillColor: button_1 ? Colors.blue : Colors.black,
+                        ),
+                      ),
+                      Container(
+                        height: 50,
+                        width: 50,
+                        child: RawMaterialButton(
+                          child:Image.asset(
+                            'images/course2.png',
+                          ),
+                          onPressed: () => {
+                            setState(() {
+                              button_1 = false;
+                              button_2 = true;
+                              button_3 = false;
+                              button_4 = false;
+                            }),
+                          },
+                          elevation: 2.0,
+                          constraints: BoxConstraints.tightFor(
+                            width: 56.0,
+                            height: 56.0,
+                          ),
+                          shape: CircleBorder(),
+                          fillColor: button_2 ? Colors.blue : Colors.black,
+                        ),
+                      ),
+                      Container(
+                        height: 50,
+                        width: 50,
+                        child: RawMaterialButton(
+                          child:Image.asset(
+                            'images/course3.png',
+                          ),
+                          onPressed: () => {
+                            setState(() {
+                              button_1 = false;
+                              button_2 = false;
+                              button_3 = true;
+                              button_4 = false;
+                            }),
+                          },
+                          elevation: 2.0,
+                          constraints: BoxConstraints.tightFor(
+                            width: 56.0,
+                            height: 56.0,
+                          ),
+                          shape: CircleBorder(),
+                          fillColor: button_3 ? Colors.blue : Colors.black,
+                        ),
+                      ),
+                      Container(
+                        height: 50,
+                        width: 50,
+                        child: RawMaterialButton(
+                          child:Image.asset(
+                            'images/course4.png',
+                          ),
+                          onPressed: () => {
+                            setState(() {
+                              button_1 = false;
+                              button_2 = false;
+                              button_3 = false;
+                              button_4 = true;
+                            }),
+                          },
+                          elevation: 2.0,
+                          constraints: BoxConstraints.tightFor(
+                            width: 56.0,
+                            height: 56.0,
+                          ),
+                          shape: CircleBorder(),
+                          fillColor: button_4 ? Colors.blue : Colors.black,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  child: RawMaterialButton(
-                    child:Image.asset(
-                      'images/course4.png',
-                    ),
-                    onPressed: () => {
-                      setState(() {
-                        button_1 = false;
-                        button_2 = false;
-                        button_3 = false;
-                        button_4 = true;
-                      }),
-                    },
-                    elevation: 2.0,
-                    constraints: BoxConstraints.tightFor(
-                      width: 56.0,
-                      height: 56.0,
-                    ),
-                    shape: CircleBorder(),
-                    fillColor: button_4 ? Colors.blue : Colors.black,
-                  ),
-                ),
-              ],
+            ],
             ),
 
-
+            Container(
+              height: 15,
+            ),
             //メインページへ遷移
             Align(
                 alignment: Alignment.bottomCenter,
                 child:ElevatedButton(
-                  child: Text("MainPage"),
+                  child: Text(
+                      "登録",
+                    style: TextStyle(
+                        color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFFE2551E),
+
+                  ),
                   onPressed: (){
                     Navigator.push(
                         context, MaterialPageRoute(builder: (context) => MainPage())
