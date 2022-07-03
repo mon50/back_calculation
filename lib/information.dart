@@ -8,6 +8,7 @@ class InformationPage extends StatefulWidget {
   State<InformationPage> createState() => _InformationPageState();
 }
 
+const kMainColour = Color(0xFF4DBEDC);
 
 bool button_1 = false;
 bool button_2 = false;
@@ -133,7 +134,9 @@ class _InformationPageState extends State<InformationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('seeeeeee'),
+          title: Text('SeaThrough'),
+          centerTitle: true,
+          backgroundColor: kMainColour,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -222,55 +225,104 @@ class _InformationPageState extends State<InformationPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children:<Widget>[
                 Container(
-                  child: RaisedButton(
-                    child: new Text('ライト'),
-                    textColor: Colors.white,
-                    color: button_1 ? Colors.blue : Colors.black,
+                  height: 50,
+                  width: 50,
+                  child: RawMaterialButton(
+                    child:Image.asset(
+                      'images/course1.png',
+                    ),
                     onPressed: () => {
                       setState(() {
                         button_1 = true;
-                      })
+                        button_2 = false;
+                        button_3 = false;
+                        button_4 = false;
+                      }),
                     },
+                    elevation: 2.0,
+                    constraints: BoxConstraints.tightFor(
+                      width: 56.0,
+                      height: 56.0,
+                    ),
+                    shape: CircleBorder(),
+                    fillColor: button_1 ? Colors.blue : Colors.black,
                   ),
                 ),
                 Container(
-                    child: RaisedButton(
-                      child: new Text('スタンダード'),
-                      textColor: Colors.white,
-                      color: button_2 ? Colors.blue : Colors.black,
-                      onPressed: () => {
-                        setState(() {
-                          button_2 = true;
-                        })
-                      },
+                  height: 50,
+                  width: 50,
+                  child: RawMaterialButton(
+                    child:Image.asset(
+                      'images/course2.png',
+                    ),
+                    onPressed: () => {
+                      setState(() {
+                        button_1 = false;
+                        button_2 = true;
+                        button_3 = false;
+                        button_4 = false;
+                      }),
+                    },
+                    elevation: 2.0,
+                    constraints: BoxConstraints.tightFor(
+                    width: 56.0,
+                    height: 56.0,
+                    ),
+                    shape: CircleBorder(),
+                    fillColor: button_2 ? Colors.blue : Colors.black,
                     ),
                 ),
                 Container(
-                    child: RaisedButton(
-                      child: new Text('ヘヴィ'),
-                      textColor: Colors.white,
-                      color: button_3 ? Colors.blue : Colors.black,
-                      onPressed: () => {
-                        setState(() {
-                          button_3 = true;
-                        }),
-                      },
+                  height: 50,
+                  width: 50,
+                  child: RawMaterialButton(
+                    child:Image.asset(
+                      'images/course3.png',
                     ),
+                    onPressed: () => {
+                      setState(() {
+                        button_1 = false;
+                        button_2 = false;
+                        button_3 = true;
+                        button_4 = false;
+                      }),
+                    },
+                    elevation: 2.0,
+                    constraints: BoxConstraints.tightFor(
+                      width: 56.0,
+                      height: 56.0,
+                    ),
+                    shape: CircleBorder(),
+                    fillColor: button_3 ? Colors.blue : Colors.black,
+                  ),
                 ),
                 Container(
-                    child: RaisedButton(
-                      child: new Text('エキスパート'),
-                      textColor: Colors.white,
-                      color: button_4 ? Colors.blue : Colors.black,
-                      onPressed: () => {
-                        setState(() {
-                          button_4 = true;
-                        }),
-                      },
+                  height: 50,
+                  width: 50,
+                  child: RawMaterialButton(
+                    child:Image.asset(
+                      'images/course4.png',
                     ),
+                    onPressed: () => {
+                      setState(() {
+                        button_1 = false;
+                        button_2 = false;
+                        button_3 = false;
+                        button_4 = true;
+                      }),
+                    },
+                    elevation: 2.0,
+                    constraints: BoxConstraints.tightFor(
+                      width: 56.0,
+                      height: 56.0,
+                    ),
+                    shape: CircleBorder(),
+                    fillColor: button_4 ? Colors.blue : Colors.black,
+                  ),
                 ),
               ],
             ),
+
 
             //メインページへ遷移
             Align(
@@ -282,7 +334,7 @@ class _InformationPageState extends State<InformationPage> {
                         context, MaterialPageRoute(builder: (context) => MainPage())
                     );
                   },
-                )
+                ),
             ),
           ],
         ),
